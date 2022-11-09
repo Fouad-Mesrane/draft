@@ -82,7 +82,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://espn.com") String url) {
+    public void driverSetup( @Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://google.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -92,12 +92,13 @@ public class BasePage {
     }
 
     @Parameters({"driverConfigEnabled"})
-    @AfterMethod
+    @AfterMethod(enabled = false)
     public void cleanUp(@Optional("true") String driverConfigEnabled) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
-            driver.close();
+            //driver.close();
             driver.quit();
         }
+
     }
 
     @Parameters({"driverConfigEnabled"})

@@ -9,4 +9,14 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://automationpractice.com"/>
 
+    <test name="Regression">
+        <classes>
+            <class name="tests.SubmitOrderTest">
+
+            </class>
+
+
+        </classes>
+    </test>
+
 </suite>
