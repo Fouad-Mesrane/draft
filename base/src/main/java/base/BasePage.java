@@ -164,6 +164,10 @@ public class BasePage {
         return element;
     }
 
+    public void waitForEleToBeVisible(WebElement element){
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
+    }
+
     public void hoverOverElement(WebElement element) {
         Actions actions = new Actions(driver);
 
