@@ -16,7 +16,7 @@ public class HomePage extends BasePage {
     WebElement signInBtn;
 
     @FindBy(css = "a[title='Sign Up']")
-    WebElement signUpBtn;
+    WebElement signUpHeader;
 
     @FindBy(id = "headerMenuLink")
     WebElement menuBtn;
@@ -28,6 +28,18 @@ public class HomePage extends BasePage {
     WebElement searchInput;
     @FindBy(xpath = "//a[@title='Search apartments for rent']")
     WebElement searchBtn;
+
+
+
+
+
+
+
+    public SignupPage navigateToSignUp() throws InterruptedException {
+        clickOnElement(signUpHeader);
+        return new SignupPage();
+
+    }
 
 
 }

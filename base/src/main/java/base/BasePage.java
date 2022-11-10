@@ -92,10 +92,10 @@ public class BasePage {
     }
 
     @Parameters({"driverConfigEnabled"})
-    @AfterMethod
+    @AfterMethod(enabled = false)
     public void cleanUp(@Optional("true") String driverConfigEnabled) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
-            driver.close();
+           // driver.close();
             driver.quit();
         }
     }
