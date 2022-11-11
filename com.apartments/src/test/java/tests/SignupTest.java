@@ -1,4 +1,4 @@
-package tests.signup;
+package tests;
 
 import base.BasePage;
 import org.testng.Assert;

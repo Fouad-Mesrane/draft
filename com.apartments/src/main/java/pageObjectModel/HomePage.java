@@ -4,6 +4,9 @@ import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.GenerateData;
+import utils.TestDataReader;
 
 public class HomePage extends BasePage {
 
@@ -28,6 +31,8 @@ public class HomePage extends BasePage {
     WebElement searchInput;
     @FindBy(xpath = "//a[@title='Search apartments for rent']")
     WebElement searchBtn;
+    @FindBy(id = "quickSearchLookup_typeahead_0")
+    WebElement firstIndexSearchResult;
 
 
 
@@ -40,6 +45,23 @@ public class HomePage extends BasePage {
         return new SignupPage();
 
     }
+    public LoginContainer navigateToLogin(){
+        clickOnElement(signInBtn);
+        return new LoginContainer();
+    }
+
+    public SearchResultsPage doSearch() throws InterruptedException {
+        clearSendKeysToElement(searchInput, TestDataReader.getTestData().getProperty("city"));
+        Thread.sleep(500);
+       jsClickOnElement(searchBtn);
+       return  new SearchResultsPage();
+    }
+
+    public AddPropertyPage navigateToAddProperty(){
+        clickOnElement(addPropertyBtn);
+        return new AddPropertyPage();
+    }
+
 
 
 }

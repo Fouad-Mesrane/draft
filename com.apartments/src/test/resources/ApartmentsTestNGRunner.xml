@@ -10,7 +10,7 @@
     <parameter name="url" value="https://www.apartments.com"/>
     <test name="tests">
         <classes>
-            <class name="tests.signup.SignupTest"/>
+            <class name="tests.AddPropertyTest"/>
         </classes>
     </test>
 
