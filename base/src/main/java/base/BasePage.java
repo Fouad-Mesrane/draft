@@ -95,7 +95,9 @@ public class BasePage {
     @AfterMethod(enabled = false)
     public void cleanUp(@Optional("true") String driverConfigEnabled) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
+
             //driver.close();
+
             driver.quit();
         }
 
@@ -163,6 +165,10 @@ public class BasePage {
             element = driver.findElement(by);
         }
         return element;
+    }
+
+    public void waitForEleToBeVisible(WebElement element){
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void hoverOverElement(WebElement element) {
