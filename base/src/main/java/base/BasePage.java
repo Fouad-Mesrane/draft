@@ -310,7 +310,7 @@ public class BasePage {
 
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         fluentWait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(20))
+                .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(Exception.class);
 
